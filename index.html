@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Heat Signal is an interactive Tableau dashboard for NYC 311 heat and hot-water reports in 2024.">
+  <title>Heat Signal | NYC 311 Heat & Hot Water</title>
+  <style>
+    :root { --ink:#0d1b2a; --navy:#102a43; --paper:#f7fafc; --teal:#16a6a0; --coral:#f28e2b; --blue:#2676b8; --muted:#627d98; }
+    * { box-sizing:border-box; } body { margin:0; font-family:Inter,Segoe UI,Arial,sans-serif; color:var(--ink); background:var(--paper); line-height:1.5; }
+    a { color:inherit; } .wrap { width:min(1180px, calc(100% - 40px)); margin:auto; }
+    header { background:linear-gradient(120deg,#102a43,#173f5f); color:#fff; padding:18px 0 70px; }
+    nav { display:flex; align-items:center; justify-content:space-between; gap:18px; } .brand { font-weight:800; letter-spacing:.02em; text-decoration:none; }
+    .nav-link { color:#d9e2ec; font-size:.92rem; text-decoration:none; } .hero { padding:72px 0 8px; max-width:790px; }
+    .eyebrow { color:#80cbc4; font-size:.82rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    h1 { font-size:clamp(2.4rem,6vw,4.7rem); line-height:1.02; margin:12px 0 20px; letter-spacing:-.045em; } .hero p { color:#d9e2ec; font-size:1.13rem; max-width:680px; }
+    .button { display:inline-block; margin-top:16px; background:var(--coral); color:#172b4d; font-weight:800; padding:13px 19px; border-radius:8px; text-decoration:none; box-shadow:0 8px 18px #001d3338; }
+    main { margin-top:-34px; } .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; } .stat { background:white; border-radius:12px; padding:22px; box-shadow:0 8px 24px #102a4314; border:1px solid #e6eef5; }
+    .num { color:var(--blue); font-size:1.8rem; font-weight:850; } .label { color:var(--muted); font-size:.88rem; }
+    section { margin:52px 0; } h2 { font-size:1.8rem; letter-spacing:-.02em; margin:0 0 10px; } .intro { color:#486581; max-width:780px; }
+    .viz { background:#fff; border-radius:14px; padding:12px; box-shadow:0 8px 28px #102a4314; border:1px solid #e6eef5; overflow:hidden; } .viz iframe { border:0; width:100%; min-height:760px; display:block; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .card { background:#fff; border-left:4px solid var(--teal); padding:20px; border-radius:8px; box-shadow:0 6px 16px #102a4310; } .card h3 { margin:0 0 8px; font-size:1rem; } .card p { margin:0; color:#627d98; font-size:.94rem; }
+    footer { border-top:1px solid #d9e2ec; color:#627d98; font-size:.85rem; padding:28px 0 42px; } footer a { color:#2676b8; }
+    @media (max-width:720px) { header { padding-bottom:54px; } .hero { padding-top:55px; } .stats,.grid { grid-template-columns:1fr; } .viz iframe { min-height:640px; } nav { align-items:flex-start; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav><a class="brand" href="./">HEAT SIGNAL</a><a class="nav-link" href="https://github.com/Perumal100/HT-Tableau-Dashboard">View source ↗</a></nav>
+      <div class="hero">
+        <div class="eyebrow">Civic operations · Tableau Public</div>
+        <h1>Where NYC heat & hot-water demand tells its story.</h1>
+        <p>An interactive exploration of 2024 NYC 311 HEAT/HOT WATER reports—built to reveal seasonal demand and borough-level concentration at a glance.</p>
+        <a class="button" href="#dashboard">Explore the dashboard ↓</a>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="stats" aria-label="Dataset summary">
+      <div class="stat"><div class="num">264,750</div><div class="label">Heat & hot-water reports represented</div></div>
+      <div class="stat"><div class="num">5</div><div class="label">New York City boroughs</div></div>
+      <div class="stat"><div class="num">2024</div><div class="label">Calendar year analyzed</div></div>
+    </div>
+    <section id="dashboard">
+      <h2>Interactive dashboard</h2>
+      <p class="intro">Select a borough in the comparison chart to filter the monthly trend. The dashboard uses a high-contrast seasonal line and color-coded borough bars to make the operational pattern easy to read.</p>
+      <div class="viz">
+        <iframe title="Heat Signal — NYC 311 Heat & Hot Water Reports, 2024" src="https://public.tableau.com/views/HeatSignalNYC311HeatHotWaterReports2024/HeatSignal2024?:showVizHome=no&:embed=true" allowfullscreen></iframe>
+      </div>
+    </section>
+    <section>
+      <h2>Questions this dashboard answers</h2>
+      <div class="grid">
+        <article class="card"><h3>When did demand peak?</h3><p>Trace the 2024 monthly pattern to identify the periods of greatest reported need.</p></article>
+        <article class="card"><h3>Where was demand concentrated?</h3><p>Compare borough totals, then filter to investigate each borough’s own seasonal pattern.</p></article>
+        <article class="card"><h3>How can this be extended?</h3><p>The source data also supports reported-scope, weekday, hour, and status views.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap">Built by Perumal Marimuthu · Data derived from <a href="https://data.cityofnewyork.us/">NYC Open Data</a> and the original <a href="https://github.com/Perumal100/Heat-Signal">Heat Signal project</a>.</div></footer>
+</body>
+</html>
