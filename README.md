@@ -6,7 +6,6 @@
 
 ## Live experience
 
-- **Portfolio landing page:** https://perumal100.github.io/HT-Tableau-Dashboard/
 - **Tableau Public workbook:** https://public.tableau.com/views/HeatSignalNYC311HeatHotWaterReports2024/HeatSignal2024
 
 > The landing page embeds the Tableau workbook directly, so visitors can explore the dashboard without leaving the project.
